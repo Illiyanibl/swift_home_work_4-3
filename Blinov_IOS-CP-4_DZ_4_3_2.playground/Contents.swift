@@ -96,12 +96,13 @@ print(pointsToMoney(points: userPoints))
 // подготовленный массив
 arrayOfNumbers
 
-func calculateSumEvenOddValues(from array: [Int?]) -> (Int, Int) {
+func calculateSumEvenOddValues(from array: [Int?]) -> (Int, Int, Int) {
     // TODO: выполнить код
     var even: Set<Int> = []
     var odd: Set<Int> = []
     var evenSum: Int = 0
     var oddSum: Int = 0
+    var allSum: Int = 0
     for n in array {
         if let n {
             (n % 2 == 0) ? (even.insert(n)) : (odd.insert(n))
@@ -113,7 +114,8 @@ func calculateSumEvenOddValues(from array: [Int?]) -> (Int, Int) {
     odd.forEach { i in
         oddSum += i
     }
-    return (evenSum, oddSum)
+    allSum = evenSum + oddSum
+    return (evenSum, oddSum, allSum)
 }
 
 // проверка решения Задача №3
